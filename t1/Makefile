@@ -1,5 +1,6 @@
 all: 3nodesIsMinimum.png
-all: wiki.png
+all: livering_observed.txt
+all: livering_wiki.png
 all: t1.png
 
 %.png : %.txt
