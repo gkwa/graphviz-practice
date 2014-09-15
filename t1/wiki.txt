@@ -1,0 +1,47 @@
+# Slave Server <= Master Server = Slave Server ID
+
+# US<=AU = 1
+# AU<=SG = 2
+# SG<=JP = 3
+# JP<=EU = 4
+# EU<=SA = 5
+# SA<=ET = 6
+# ET<=DB = 7
+# DB<=US = 9
+# IN<=EU = 8
+
+digraph MySQLRep {
+ratio=1.4142;
+size="11.69,16.53"
+
+# ####################################################################################################
+
+node [shape=circle,fixedsize=true,width=0.99]; LiveUS; LiveAU; LiveSG; LiveJP; LiveEU; LiveSA; LiveUSEast; LiveDB; LiveIN;
+
+LiveAU->LiveUS;
+LiveSG->LiveAU;
+LiveJP->LiveSG;
+LiveEU->LiveJP;
+LiveSA->LiveEU;
+LiveUSEast->LiveSA;
+LiveDB->LiveUSEast;
+LiveUS->LiveDB;
+LiveEU->LiveIN;
+
+overlap=false
+label="Streambox MySQL Server replication"
+fontsize=10;
+
+# # ####################################################################################################
+# # observe on servers
+# # ####################################################################################################
+
+# node [shape=circle,fixedsize=true,width=0.99]; A; B; C;
+
+# LiveSA->LiveUSEast;
+# LiveEU->LiveSA;
+# LiveSG->LiveJP;
+# LiveUSEast->LiveUS;
+# LiveIN->LiveEU;
+
+}
