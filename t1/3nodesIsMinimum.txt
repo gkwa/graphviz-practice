@@ -4,6 +4,7 @@
 digraph MySQLRep {
 ratio=1.4142;
 size="11.69,16.53"
+layout=circo
 node [shape=circle,fixedsize=true,width=0.99]; t7; t8; t6;
 
 t6->tdb;
