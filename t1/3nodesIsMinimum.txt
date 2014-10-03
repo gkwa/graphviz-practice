@@ -6,11 +6,12 @@ ratio=1.4142;
 size="11.69,16.53"
 node [shape=circle,fixedsize=true,width=0.99]; t7; t8; t6;
 
-t6->t7;
+t6->tdb;
+tdb->t7;
 t7->t8;
 t8->t6;
 
 overlap=false
-label="Target of arrow is the slave\n\nt6 is t7's master\nt7 is t8's master\nt8 is t6's master"
+label="Arrow head is on the slave\n\nt6 is tdb's master\ntdb is t7's master\nt7 is t8's master\nt8 is t6's master"
 fontsize=10;
 }
