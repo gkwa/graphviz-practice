@@ -17,7 +17,7 @@ LiveIN->LiveJP [ label="4" ];
 LiveJP->LiveSG [ label="3" ];
 LiveSG->LiveAU [ label="2" ];
 LiveAU->LiveUS [ label="1" ];
-LiveUS->LiveDB [ label="9"];
+LiveUS->LiveDB [ label="9" ];
 
 overlap=false
 label="A -> B means server A is the MySQL master of B"
