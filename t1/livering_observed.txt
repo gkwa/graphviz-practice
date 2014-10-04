@@ -5,8 +5,6 @@ digraph MySQLRep {
 size="11.69,16.53"
 layout=circo;
 
-# ####################################################################################################
-
 node [shape=circle,fixedsize=true,width=0.99];
 
 LiveDB->LiveUSEast [ label="8" ];
