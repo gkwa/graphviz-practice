@@ -9,15 +9,15 @@ layout=circo;
 
 node [shape=circle,fixedsize=true,width=0.99]; LiveUS; LiveAU; LiveSG; LiveJP; LiveEU; LiveSA; LiveUSEast; LiveDB; LiveIN;
 
-LiveDB->LiveUSEast;
-LiveUSEast->LiveSA;
-LiveSA->LiveEU;
-LiveEU->LiveIN;
-LiveIN->LiveJP;
-LiveJP->LiveSG;
-LiveSG->LiveAU;
-LiveAU->LiveUS;
-LiveUS->LiveDB;
+LiveDB->LiveUSEast [ label="8" ];
+LiveUSEast->LiveSA [ label="7" ];
+LiveSA->LiveEU [ label="5" ];
+LiveEU->LiveIN [ label="6" ];
+LiveIN->LiveJP [ label="4" ];
+LiveJP->LiveSG [ label="3" ];
+LiveSG->LiveAU [ label="2" ];
+LiveAU->LiveUS [ label="1" ];
+LiveUS->LiveDB [ label="9"];
 
 overlap=false
 label="A -> B means server A is the MySQL master of B"
