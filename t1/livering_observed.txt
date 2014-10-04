@@ -7,6 +7,8 @@ layout=circo;
 
 node [shape=circle,fixedsize=true,width=0.99];
 
+LiveDB [style=filled,fillcolor=grey];
+
 LiveDB->LiveUSEast [ label="8" ];
 LiveUSEast->LiveSA [ label="7" ];
 LiveSA->LiveEU [ label="5" ];
@@ -18,7 +20,7 @@ LiveAU->LiveUS [ label="1" ];
 LiveUS->LiveDB [ label="9" ];
 
 overlap=false
-label="A -> B means server A is the MySQL master of B"
+label="A -> B means server A is the MySQL master of B\nGrey server is database server only, not SLS"
 fontsize=10;
 
 }
