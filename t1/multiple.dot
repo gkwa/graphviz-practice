@@ -1,0 +1,8 @@
+# single.dot
+digraph one {
+  a -> b;
+}
+
+digraph two {
+  c -> d;
+}
