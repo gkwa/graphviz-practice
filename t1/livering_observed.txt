@@ -1,26 +1,27 @@
 # Slave Server <= Master Server = Slave Server ID
 
 digraph MySQLRep {
-# ratio=1.4142;
-size="11.69,16.53"
-layout=circo;
 
-node [shape=circle,fixedsize=true,width=0.99];
+	# ratio=1.4142;
+	size="11.69,16.53"
+	layout=circo;
 
-LiveDB [style=filled,fillcolor=grey];
+	node [shape=circle,fixedsize=true,width=0.99];
 
-LiveDB->LiveUSEast [ label="8" ];
-LiveUSEast->LiveSA [ label="7" ];
-LiveSA->LiveEU [ label="5" ];
-LiveEU->LiveIN [ label="6" ];
-LiveIN->LiveJP [ label="4" ];
-LiveJP->LiveSG [ label="3" ];
-LiveSG->LiveAU [ label="2" ];
-LiveAU->LiveUS [ label="1" ];
-LiveUS->LiveDB [ label="9" ];
+	LiveDB [style=filled,fillcolor=grey];
 
-overlap=false
-label="A -> B means server A is the MySQL master of B\nGrey server is database server only, not SLS"
-fontsize=10;
+	LiveDB->LiveUSEast [ label="8" ];
+	LiveUSEast->LiveSA [ label="7" ];
+	LiveSA->LiveEU [ label="5" ];
+	LiveEU->LiveIN [ label="6" ];
+	LiveIN->LiveJP [ label="4" ];
+	LiveJP->LiveSG [ label="3" ];
+	LiveSG->LiveAU [ label="2" ];
+	LiveAU->LiveUS [ label="1" ];
+	LiveUS->LiveDB [ label="9" ];
+
+	overlap=false
+	label="A -> B means server A is the MySQL master of B\nGrey server is database server only, not SLS"
+	fontsize=10;
 
 }
