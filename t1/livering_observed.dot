@@ -13,7 +13,8 @@ digraph MySQLRep {
 	LiveDB->LiveUSEast [ label="8" ];
 	LiveUSEast->LiveSA [ label="7" ];
 	LiveSA->LiveEU [ label="5" ];
-	LiveEU->LiveIN [ label="6" ];
+	LiveEU->LiveDE;
+	LiveDE->LiveIN;
 	LiveIN->LiveJP [ label="4" ];
 	LiveJP->LiveSG [ label="3" ];
 	LiveSG->LiveAU [ label="2" ];
