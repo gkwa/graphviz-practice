@@ -8,18 +8,43 @@ digraph MySQLRep {
 
 	node [shape=circle,fixedsize=true,width=0.99];
 
-	LiveDB [style=filled,fillcolor=grey];
+	LiveUS [ label=LiveUS ];
+	LiveAU [ label=LiveAU ];
+	LiveSG [ label=LiveSG ];
+	LiveJP [ label=LiveJP ];
+	LiveEU [ label=LiveEU ];
+	LiveSA [ label=LiveSA ];
+	LiveUSEast [ label=LiveUSEast ];
+	LiveIN [ label=LiveIN ];
+	LiveDB [ label=LiveDB ];
+	LiveDE [ label=LiveDE ];
 
-	LiveUS [ label="LiveUS\nserver-id=1" ];
-	LiveAU [ label="LiveAU\nserver-id=2" ];
-	LiveSG [ label="LiveSG\nserver-id=3" ];
-	LiveJP [ label="LiveJP\nserver-id=4" ];
-	LiveEU [ label="LiveEU\nserver-id=5" ];
-	LiveSA [ label="LiveSA\nserver-id=6" ];
-	LiveUSEast [ label="LiveUSEast\nserver-id=7" ];
-	LiveIN [ label="LiveIN\nserver-id=8" ];
-	LiveDB [ label="LiveDB\nserver-id=9" ];
-	LiveDE [ label="LiveDE\nserver-id=10" ];
+	# Here I wanted to show that when a local mysql connection can't be
+	# made, then the connection is made to LiveDB, but adding these dotted
+	# edges screws up the ring.
+	# LiveUS->LiveDB [style=dotted];
+	# LiveAU->LiveDB [style=dotted];
+	# LiveSG->LiveDB [style=dotted];
+	# LiveJP->LiveDB [style=dotted];
+	# LiveIN->LiveDB [style=dotted];
+	# LiveDE->LiveDB [style=dotted];
+	# LiveEU->LiveDB [style=dotted];
+	# LiveSA->LiveDB [style=dotted];
+	# LiveUSEast->LiveDB [style=dotted];
+
+	# This notation LiveUS:w (for example) uses graphviz compass points to
+	# position the edge.
+	# http://stackoverflow.com/questions/1477532/how-to-force-position-of-edges-in-graphviz
+	LiveUS:w->LiveUS:w [ fontsize=8 penwidth=0 dir=none label="serverid=1"];
+	LiveAU:sw->LiveAU:sw [ fontsize=8 penwidth=0 dir=none label="serverid=2"];
+	LiveSG:e->LiveSG:e [ fontsize=8 penwidth=0 dir=none label="serverid=3"];
+	LiveJP:s->LiveJP:s [ fontsize=8 penwidth=0 dir=none label="serverid=4"];
+	LiveEU:s->LiveEU:s [ fontsize=8 penwidth=0 dir=none label="serverid=5"];
+	LiveSA:s->LiveSA:s [ fontsize=8 penwidth=0 dir=none label="serverid=6"];
+	LiveUSEast:n->LiveUSEast:n [ fontsize=8 penwidth=0 dir=none label="serverid=7"];
+	LiveIN:n->LiveIN:n [ fontsize=8 penwidth=0 dir=none label="serverid=8"];
+	LiveDB:s->LiveDB:s [ fontsize=8 penwidth=0 dir=none label="serverid=9"];
+	LiveDE:e->LiveDE:e [ fontsize=8 penwidth=0 dir=none label="serverid=10"];
 
 	LiveDB->LiveUSEast;
 	LiveUSEast->LiveSA;
@@ -33,7 +58,16 @@ digraph MySQLRep {
 	LiveUS->LiveDB;
 
 	overlap=false
-	label="A -> B means server A is the MySQL master of B\nGrey server is database server only, not SLS"
+	label="A -> B means server A is the MySQL master of B\nGrey server is database server only.  It can't accept ACT-L3 streams."
 	fontsize=10;
 
+	LiveDB [style=filled,fillcolor=grey];
+
 }
+
+# Emacs vars
+# Local Variables: ***
+# comment-column:0 ***
+# tab-width: 2 ***
+# comment-start:"# " ***
+# End: ***
