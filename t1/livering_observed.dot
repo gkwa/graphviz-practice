@@ -10,16 +10,27 @@ digraph MySQLRep {
 
 	LiveDB [style=filled,fillcolor=grey];
 
-	LiveDB->LiveUSEast [ label="8" ];
-	LiveUSEast->LiveSA [ label="7" ];
-	LiveSA->LiveEU [ label="5" ];
+	LiveUS [ label="LiveUS\nserver-id=1" ];
+	LiveAU [ label="LiveAU\nserver-id=2" ];
+	LiveSG [ label="LiveSG\nserver-id=3" ];
+	LiveJP [ label="LiveJP\nserver-id=4" ];
+	LiveEU [ label="LiveEU\nserver-id=5" ];
+	LiveSA [ label="LiveSA\nserver-id=6" ];
+	LiveUSEast [ label="LiveUSEast\nserver-id=7" ];
+	LiveIN [ label="LiveIN\nserver-id=8" ];
+	LiveDB [ label="LiveDB\nserver-id=9" ];
+	LiveDE [ label="LiveDE\nserver-id=10" ];
+
+	LiveDB->LiveUSEast;
+	LiveUSEast->LiveSA;
+	LiveSA->LiveEU;
 	LiveEU->LiveDE;
 	LiveDE->LiveIN;
-	LiveIN->LiveJP [ label="4" ];
-	LiveJP->LiveSG [ label="3" ];
-	LiveSG->LiveAU [ label="2" ];
-	LiveAU->LiveUS [ label="1" ];
-	LiveUS->LiveDB [ label="9" ];
+	LiveIN->LiveJP;
+	LiveJP->LiveSG;
+	LiveSG->LiveAU;
+	LiveAU->LiveUS;
+	LiveUS->LiveDB;
 
 	overlap=false
 	label="A -> B means server A is the MySQL master of B\nGrey server is database server only, not SLS"
